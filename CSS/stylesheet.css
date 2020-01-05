@@ -110,6 +110,8 @@ header
 	width: 100%;
 	z-index:2;
 	height: 30px;
+	
+	box-shadow: 0px 4px 15px #1c1a19;
 
 }
 

@@ -17,7 +17,7 @@
 /*mise en place des couleur et des polices */
 body
 {
-	background: url('images/Background.jpg');
+	background: url('images/Background.png');
 	font-family :  Arial,sans-serif;
 	background-color: #cccccc;
 	padding: 300 px;

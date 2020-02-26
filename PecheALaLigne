@@ -1,4 +1,3 @@
-<!-- la page pour me contacter-->
 <!DOCTYPE html>
 <html>
 
@@ -21,14 +20,14 @@
 					
 					<div id ="langues">
 						<h3> 
-							langues 
+							<!--langues--> 
 						</h3>
 					</div>
 					
 				</div >
 				
 				<!-- menu de naviguation entre accueil, projets, cv et contact -->
-				<nav>
+				<nav id="menu">
 					<ul>
 						<li><a href="index.html"> Accueil</a></li>
 						<li><a href="projets.html"> Projets</a></li>
@@ -37,25 +36,40 @@
 					</ul>
 				</nav>
 			</header>
-		<div id="page_centree">	
-			<section id ="contact">
-				<h1>Contact </h1>
-				<h2>Samuel Dubois </h2>
-				<nav>
-					<ul>
-						<p>
-							e-mail:
-						
-						<li><a href="mailto:Samuel.M.Dubois@gmail.com">Samuel.M.Dubois@gmail.com</a></li></br>
-						</p>
-						<p>Cv:
-						<li><a href="CV_Janvier_2020.pdf">Curiculum vitae</a></li>
-						</p>
-					</ul>				
-			</section>
-		
-		
-		
+			
+		<!-- les nouveaux contenue auront une mini page ici, il y en aura 2 a la fois-->
+		<div id="page_centree">
+			<div id="les_projets">
+			<h1>
+				Péché A La Ligne
+			</h1>
+			
+			<p>	
+				<figure>
+					<img src="images/Peche_Menu.png" class="imagepouraccueil" alt ="Image de Peche a la ligne menu" />
+				</figure>
+				Dans Péchés A La Ligne, vous incarnez un prêtre qui doit choisir entre <strong>absoudre</strong> ou <strong>condamner</strong> des âmes damnées. 
+				Pour faire votre choix, vous devez respecter les demandes de votre dieu. Ce jeu a été fait en <strong>48h</strong> lors d’une jam étudiante
+				organisée pour accueillir les nouveaux étudiants dans mon école. Avec un 5e année, j’ai <strong>supervisé</strong> une équipe de <strong>cinq</strong> nouveaux 
+				étudiants dans la création de leur premier jeu.
+			</p>
+			
+			<h2>
+				
+				Compétences acquises
+			</h2>
+			
+			<p>
+				J’ai <strong>managé </strong>l’équipe dans la création d’un concept simple et <strong>réalisable</strong> en prenant en compte le niveau de chacun et le <strong>temps réduit</strong>. 
+				J’ai participé à la <strong>conception </strong>et à la <strong>programmation</strong> du <strong>core GamePlay</strong> et j’ai également créé <strong>l’interface</strong> du jeu
+			</p>
+			
+			<img src="images/Peche_InGame.png" class="imagepouraccueil" alt ="Image de Peche a al ligne in game" />
+			<p>
+			<em>image en jeu </em>
+			</p>
+			
+			</div>
 			<div id="projets_side">
 				<nav>
 					<h1>
@@ -78,22 +92,6 @@
 									<em>InSlain </em>
 								</p>
 							</li>
-					<li class="image_projet">
-								<a href="PecheALaLigne.html" >
-									<img src="images/Peche_Priest.png" class="imagesprojets" alt ="Image de PecheALaLigne" />
-								</a>
-								<p>
-									<em>Peche A La Ligne </em>
-								</p>
-						</li>
-					<li class="image_projet">
-							<a href="familyless.html">
-								<img src="images/familyless_logo_petit.png" class="imagesprojets" alt ="Image de Familyless" />
-							</a>
-							<p>
-								<em>Familyless</em>
-							</p>
-						</li>
 						<li class="image_projet">
 								<a href="SantaLittleGunship.html" >
 									<img src="images/SantaLittleGunship_petit.png" class="imagesprojets" alt ="Image de SantaLittleGunship" />
@@ -109,7 +107,6 @@
 							</a>
 							<p>
 								<em>TheRapGangstaGame </em>
-								
 							</p>
 						</li>
 													
@@ -124,6 +121,8 @@
 							</li>
 							
 							
+							
+
 					</ul>
 				</nav>
 			</div>

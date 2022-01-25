@@ -3,7 +3,7 @@
 
 @font-face
 {
-    font-family: 'Dayrom';
+    font-family: Arial;
     src: url('polices/dayrom.eot');
     src: url('polices/dayrom.eot?#iefix') format('embedded-opentype'),
          url('polices/dayrom.woff') format('woff'),
@@ -46,7 +46,7 @@ body
 
 #le_contenu_nouveau h1
 {
-	font-family : Dayrom,'Trebuchet MS', Arial, serif;
+	font-family : Arial;
 	font-weight: bold;
 	font-size: 300%;
 	border-bottom: 2px solid #760001;/*ça ne fonctionne pas pour une raison qui m'échappe */
@@ -93,13 +93,12 @@ nav a
 }
  a
 {
-	font-style : underline !important;
+	
 }
 
 nav a:hover
 {
     color: #760001;
-    border-bottom: 3px solid #760001;
 }
 #image_projet :hover
 {
@@ -122,8 +121,8 @@ header
 
 a
 {
-	color: #181818;
-	text-decoration:none;
+	
+	/*text-decoration:none;*/
 }
 
 /*la page centrale blanche, reduite et centrée sur laquel vont se déroler les articles*/
@@ -149,6 +148,25 @@ aside
 	margin-left: 5%;
 	margin-right: 5%;
 	text-align : center;
+}
+/* unvisited link */
+a:link {
+	color: black;
+}
+
+/* visited link */
+a:visited {
+	color: black;
+}
+
+/* mouse over link */
+a:hover {
+	color: steelblue;
+}
+
+/* selected link */
+a:active {
+	color: darkblue;
 }
 aside img
 {

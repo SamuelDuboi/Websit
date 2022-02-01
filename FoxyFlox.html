@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset ="utf-8" />
+		<link rel="stylesheet" type="text/css" href="CSS/stylesheet.css"/>
+		<title > Samuel Dubois </title>
+	</head>
+	
+	<body>
+
+		
+			<header>
+			
+				<!--bloc au dessus avec mon nom et un chnagment de langues possible -->
+				<div id="Mon_Nom">
+					<h1>
+						Samuel Dubois - Programmer/ Tool Designer
+					</h1>
+					
+					<div id ="langues">
+						<h3> 
+							<a href="FoxyFloxEnglish.html" >
+								<img src="images/UnionJack.png"  />
+							</a>
+								
+							<a href="FoxyFlox.html" >
+								<img src="images/french_flag.png"  />
+							</a>
+						</h3>
+					</div>
+					
+				</div >
+				
+				<!-- menu de naviguation entre accueil, projets, cv et contact -->
+				<nav id="menu">
+					<ul>
+						<li><a href="index.html"> Accueil</a></li>
+						<li><a href="projets.html"> Projets</a></li>
+						<li><a href="images/DuboisSamuelCV.pdf"> Cv</a></li>
+						<li><a href="contact.html"> Contact</a></li>
+					</ul>
+				</nav>
+			</header>
+			
+		<!-- les nouveaux contenue auront une mini page ici, il y en aura 2 a la fois-->
+		<div id="page_centree">
+			<div id="les_projets">
+			<h1>
+				Escape Time
+			</h1>
+			
+			<p>	
+				<figure>
+					<img src="images/EscapeTimeRoom.png" class="imagepouraccueil" alt="la_sixème_collection" />
+				</figure>
+				</br></br>
+				
+				Foxy Flox est un jeu de manipulation en <strong>Réalité Virtuelle multijoueur</strong>. Dans ce jeu, les joueurs doivent manipuler des flox : pièces emboîtables tel des tétrominos.
+				En les empilant, les joueurs forment une tour, le premier atteignant la ligne d’arrivée à gagner. 
+				Pour cela, ils disposent de différents moyens comme l’obtention de flox de métal ou l’envoie de météorite sur la tour de leur adversaire. 
+				</br></br>
+				Le projet a été réalisé en <strong>4 mois</strong> par une équipe de 4 étudiants en game design et de 1 étudiant en game programming sur Unity 3D.
+				</br></br>
+				L’intégration de l’api <strong>Steam</strong> est en cours et le jeu sera <strong>bientôt disponible</strong>.
+			</p>
+			
+			<h2></br></br></br></br>
+				Mon rôle :
+			</h2>
+			
+			<p>
+				J’ai été le seul programmeur du jeu, alors que je travaillais sur les <strong>systèmes du jeu</strong>, les game designers réalisaient des prototypes que j’intégrais ensuite au system. 
+				J’ai principalement travaillé sur trois grandes fonctionnalités :  le <strong>VR contrôleur</strong>,<strong> remaniement de la physique</strong>, <strong>mise en place du réseau</strong>.
+
+			</p>
+			
+						<h3>
+				           <strong>  -	VR contrôler :</strong>
+			</h3>
+			<p>
+				<figure>
+					<img src="images/EscapeTimeTool.png" class="imagepouraccueil" alt="la_sixème_collection" />
+				</figure>
+				Nous avons utilisé le SDK <strong>OpenXR</strong> afin de réaliser ce projet, ce dernier permet de réunir les sdk de la <strong>plupart des casques VR</strong> (Quest, HTC, Index) en un seul. 
+				</br></br>
+				Le jeu étant un jeu de manipulation, nous avons utilisé le<strong>  XR Interaction Toolkit</strong>  de Unity que nous avons modifié pour convenir à notre jeu : j’ai rajouté une « tomato presence » 
+				qui permet de déplacer l’objet attrapé afin qu’il apparaisse comme<strong>  étant attrapé</strong>  dans la main et non pas remplaçant la main comme le propose le toolkit de base. 
+				Cela permet aussi de <strong> conserver la rotation actuelle</strong>  de l’objet afin de faciliter la manipulation.
+				</br></br>
+				Nous avons également créé un <strong>system de déplacement</strong> afin de <strong>limiter la motion sickness</strong> que procure souvent une expérience VR.
+				Le joueur se déplace ainsi autour de sa table en effectuant des mouvements semblables à un tir à la corde, et cela, aussi bien verticalement qu’horizontalement. 
+				Les <strong>mouvements réels</strong> du joueur dans son salon sont toujours <strong>pris en compte</strong>, mais il peut, grâce à notre system, se déplacer dans le jeu sans se mouvoir dans la vraie vie.
+				Cela permet même de <strong>jouer assit</strong> si on le désire.
+			</p>	
+			<img src="images/EscapeTimeLignes.png"  alt=" The tool" />
+			<h3>
+				           <strong>  - Physique :</strong>
+			</h3>
+			<p>
+				Le jeu étant un jeu d’empilement en réalité virtuel, il nous a fallu utiliser une <strong>physique réaliste</strong>. N’ayant pas le temps de recréer une physique, j’ai décidé de travailler sur la physique du moteur Unity.
+				Seulement, je me suis très vite retrouvé bloqué par un <strong>problème de tremblement </strong>: si on empile plus de 3 rigidbodys (corps physiqués de Unity), et que l’on rapproche un autre de la structure,
+				celle-ci va se mettre à bouger même s'il n’y a <strong>pas de contact</strong>. Cela est dû à l’<strong>anticipation </strong>qui permet de prédire les comportements physiques quelque frames en avance afin d’optimiser les calculs.
+				</br></br>
+				J’ai donc tout d’abord modifié les <strong>paramètres de physique</strong> de Unity afin de les rendre le plus optimisé possible (gestion des sleep treshold, des contacts offset, des world subdivisions, des time step, etc.) 
+				ce qui a permit de <strong>limiter le problème</strong>. Ensuite, j’ai modifié via code l’<strong>anticipation</strong> afin qu’elle soit <strong>réduite</strong>. 
+				Cela augmente les calculs, mais les <strong>gains</strong> au niveau de la<strong> manipulation et de la physique</strong> est tel que nous avons jugé cette modification acceptable.
+
+			</p>	
+			<h3>
+				           <strong>  - Réseau :</strong>
+			</h3>
+			<p>
+				N’ayant aucune connaissance en réseau, j’ai dû me former sur le tas. J’ai utilisé l’<a style="style:link" href="https://mirror-networking.com/"> API Mirror</a> (bas niveau) afin de créer mon réseau. 
+				Celui-ci fonctionne en <strong>Peer To Peer</strong> (system qui m’a semblé être le plus simple à mettre en place) pour deux joueurs. La physique du jeu est <strong>calculée en local</strong> sur les deux joueurs, 
+				le <strong>serveur</strong> ne possède que des <strong>informations de positions</strong> afin de <strong>limiter le poids des paquets</strong>. Les joueurs ne jouant pas sur la même structure, 
+				le fait que l’actualisation de la physique d’un joueur dans le monde de l’autre joueur ne soit pas instantanée ne gêne pas. 
+				</br></br>
+				Afin d’augmenter l’interaction entre les joueurs, j’ai aussi mis en place un <strong>système de communication vocal</strong> via micro. Les paquets de sons étant assez lourds, 
+				j’ai <strong>organisé l’envoie de paquet</strong> afin qu’il n’y ait rien d’autre que des informations sonores dans leurs paquets.
+
+			</p>	
+			<h2>
+				Compétences acquises :
+			</h2>
+			
+			<p>
+				-	J’ai appris les enjeux des <strong>contrôleurs de réalité virtuelle</strong> et j’ai appris à utiliser le <strong>SDK Open XR</strong> afin de créer mon contrôleur compatible 
+				sur la <strong>plupart des casques de réalité virtuelle</strong>. </br></br>
+				-	J’ai amélioré mes connaissances sur la <strong>simulation physique 3D</strong> et sur ses <strong>optimisations dans des moteurs de jeu</strong>.</br></br>
+				-	J’ai appris à développer une <strong>infrastructure en Peer to Peer</strong> pour deux joueurs via l’API bas niveau <a style="style:link" href="https://mirror-networking.com/"> Mirror</a>.</br></br>
+				-	J’ai appris à manager et à <strong>optimiser l’envoie de paquet</strong> afin d’anticiper le lag et la perte de données.</br>
+				</br>
+			</p>
+				<img src="images/EscapeTimeRoom2.png"  alt=" The tool" />
+				
+			</div>
+		
+			<div id="projets_side">
+				<nav>
+					<h1>
+						Mes projets
+					</h1>
+					<ul>
+					<li class="image_projet">
+								<a href="EscapeTime.html" >
+									<img src="images/EscapeTimeRoom.png" class="imagesprojets" alt ="Image EscapeTime" />
+								</a>
+								<p>
+									<em>Escape Time </em>
+								</p>
+							</li>
+					<li class="image_projet">
+								<a href="PirateAcademy.html" >
+									<img src="images/PirateAcademy.png" class="imagesprojets" alt ="Image PirateAcademy" />
+								</a>
+								<p>
+									<em>Pirate Academy </em>
+								</p>
+							</li>
+							<li class="image_projet">
+								<a href="KeepTheBeat.html" >
+									<img src="images/KeepTheBeatLogo.png" class="imagesprojets" alt ="Image KeepTheBeat" />
+								</a>
+								<p>
+									<em>Keep The Beat </em>
+								</p>
+							</li>
+						<li class="image_projet">
+							<a href="Volarela.html">
+								<img src="images/NodeEditor_Petit.png" class="imagesprojets"  />
+							</a>
+							<p>
+								<em>Editor Tool</em>
+							</p>
+						</li>			
+						<li class="image_projet" >
+						<a href="LaSixiemeCollection.html" >
+							<img src="images/Sixieme_Collection_FullView_Petit.png" class="imagesprojets" alt ="Image de la sixieme" />
+						</a>
+						<p>
+							<em>La Sixieme Collection </em>
+						</p>
+					</li>
+							<li class="image_projet">
+								<a href="Inoh'sTale.html" >
+									<img src="images/Inoh_Menu_Petit.png" class="imagesprojets" />
+								</a>
+								<p>
+									<em>Inoh's Tale </em>
+								</p>
+							</li>
+					<li class="image_projet">
+								<a href="PecheALaLigne.html" >
+									<img src="images/Peche_Priest.png" class="imagesprojets" alt ="Image de PecheALaLigne" />
+								</a>
+								<p>
+									<em>Peche A La Ligne </em>
+								</p>
+						</li>	
+						
+						</ul>
+				</nav>
+			</div>
+		</div>
+	</body>
+</html>

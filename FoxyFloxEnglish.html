@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset ="utf-8" />
+		<link rel="stylesheet" type="text/css" href="CSS/stylesheet.css"/>
+		<title > Samuel Dubois </title>
+	</head>
+	
+	<body>
+
+		
+			<header>
+			
+				<!--bloc au dessus avec mon nom et un chnagment de langues possible -->
+				<div id="Mon_Nom">
+					<h1>
+						Samuel Dubois - Programmer/ Tool Designer
+					</h1>
+					
+					<div id ="langues">
+						<h3> 
+							<a href="FoxyFloxEnglish.html" >
+								<img src="images/UnionJack.png"  />
+							</a>
+								
+							<a href="FoxyFlox.html" >
+								<img src="images/french_flag.png"  />
+							</a>
+						</h3>
+					</div>
+					
+				</div >
+				
+				<!-- menu de naviguation entre accueil, projets, cv et contact -->
+				<nav id="menu">
+					<ul>
+						<li><a href="index.html"> Accueil</a></li>
+						<li><a href="projets.html"> Projets</a></li>
+						<li><a href="images/DuboisSamuelCV.pdf"> Cv</a></li>
+						<li><a href="contact.html"> Contact</a></li>
+					</ul>
+				</nav>
+			</header>
+			
+		<!-- les nouveaux contenue auront une mini page ici, il y en aura 2 a la fois-->
+		<div id="page_centree">
+			<div id="les_projets">
+			<h1>
+				Escape Time
+			</h1>
+			
+			<p>	
+				<figure>
+					<img src="images/EscapeTimeRoom.png" class="imagepouraccueil" alt="la_sixème_collection" />
+				</figure>
+				</br></br>
+				
+				Foxy Flox is a manipulation based  <strong>multiplayer VR game</strong>. In this game, players have to handle Flox: stackable pieces like tetrominoes.
+				By stacking them, players make towers, the first reaching the final line wins.
+				To do so, players can use special Flox like the Metal Flox or they can throw meteorites to their opponents tower.
+				</br></br>
+				The project was made in  <strong>4 months</strong> months by a team of 4 students in Game Design and 1 student in Game Programming on Unity 3D.
+				</br></br>
+				We are currently working on the  <strong>Steam</strong>API integration and will <strong>publish the game soon</strong>.
+			</p>
+			
+			<h2></br></br></br></br>
+				My role:
+			</h2>
+			
+			<p>
+				I was the only programmer on the game, so we organized our work this way: I was working on the <strong>game infrastructure </strong>while the game designers were working on prototypes which I integrate in the game afterwards. 
+				I work on three main features: the <strong>VR controller</strong>,the<strong> tweaking of physic</strong>,the <strong>multiplayer network</strong>.
+
+			</p>
+			
+						<h3>
+				           <strong>  -	VR controller :</strong>
+			</h3>
+			<p>
+				<figure>
+					<img src="images/EscapeTimeTool.png" class="imagepouraccueil" alt="la_sixème_collection" />
+				</figure>
+				I used the <strong>OpenXR</strong> SDK on the project, it allows me to use only one SDK for <strong>most of VR headsets </strong> (Quest, HTC, Index) instead of one for each.
+				</br></br>
+				I used Unity’s <strong>  XR Interaction Toolkit</strong>  to handle the manipulation of Floxes while modifying it: I added a “tomato presence” that move the object selected to make it 
+				<strong> appear like it is grab </strong> in the hand and not replacing the hand like the toolkit propose.  
+				It also keeps the object rotation to ease the manipulation.
+				</br></br>
+				I also developed a <strong>moving system</strong> to limit the <strong>motion sickness </strong> that VR usually give.
+				With this system, the player moves around his table by doing hands movement like he is pulling a rope, horizontally and vertically. 
+				The <strong>real movement</strong> of the player are still represented but this system allows him to move while little to no movement.
+				You can play at Foxy Flox while <strong>sitting on a chair. </strong>
+			</p>	
+			<img src="images/EscapeTimeLignes.png"  alt=" The tool" />
+			<h3>
+				           <strong>  - Physic :</strong>
+			</h3>
+			<p>
+				The game is a stacking game, so it needed a real like physic <strong>real like physic</strong>. I didn’t have enough time and resources to work on my own physic, so I used Unity 3D physic. 
+				But I soon found a huge problem, <strong>jittering</strong>: if a player stack more than 3 rigidbodies (Unity physic bodies) and try to stack another one,
+				the tower will <strong>jitter</strong> even the the pieces don’t collapse. It is due to Unity <strong>anticipation </strong>: it tries to figure out before hand the next physic state of each piece to ease the simulation.
+				</br></br>
+				I first modify Unity <strong>physics parameters </strong> to optimize them the more I could (modifying sleep threshold, world subdivision, time step; etc…).
+				It limited the jittering. Then I modify the’<strong>anticipation</strong> by making it less anticipataing. 
+				, by doing it add more calculation but the <strong>gain </strong> of this modification on<strong> manipulation and physic</strong> is worth it for us.
+
+			</p>	
+			<h3>
+				           <strong>  - Network :</strong>
+			</h3>
+			<p>
+				I didn’t have any knowledge of network, so I learned on the job. I used the<a style="style:link" href="https://mirror-networking.com/"> Mirror API</a> (low level) to create the network. 
+				CIt is working on <strong>Peer To Peer</strong> Peer (infrastructure that seems to me the easiest to set up for 2 players). The physic is <strong>calculated in local</strong> on both player and the  
+				 <strong>server</strong> only keep track of <strong>objects positions</strong> to <strong>light the size of packets</strong>. The players don’t play on the same structure, so the lag created by this 
+				 choice doesn’t bother.
+				</br></br>
+				To improve players interactions, I developed a<strong> voice communication system</strong> via microphone. Sound packets are heavy so I  
+				 <strong>managed the packets system </strong> so only sound data are send when they are send.
+
+			</p>	
+			<h2>
+				Skills aquired :
+			</h2>
+			
+			<p>
+				-	I learned the challenge around  <strong>VR controller </strong>and learned to used <strong>OpenXR SDK </strong> to create a game compatible for most of VR headset. </br></br>
+				-	I developed my knowledge on <strong>3D physic simulation </strong> and its <strong>optimization on game engines.</strong>.</br></br>
+				-	I learned  <strong>Peer to Peer network infrastructure </strong> with a low-level API: <a style="style:link" href="https://mirror-networking.com/"> Mirror</a>.</br></br>
+				-	I learned to managed and <strong>optimized network packets </strong> to avoid lag and data lost.</br>
+				</br>
+			</p>
+				<img src="images/EscapeTimeRoom2.png"  alt=" The tool" />
+				
+			</div>
+		
+			<div id="projets_side">
+				<nav>
+					<h1>
+						Mes projets
+					</h1>
+					<ul>
+					<li class="image_projet">
+								<a href="EscapeTime.html" >
+									<img src="images/EscapeTimeRoom.png" class="imagesprojets" alt ="Image EscapeTime" />
+								</a>
+								<p>
+									<em>Escape Time </em>
+								</p>
+							</li>
+					<li class="image_projet">
+								<a href="PirateAcademy.html" >
+									<img src="images/PirateAcademy.png" class="imagesprojets" alt ="Image PirateAcademy" />
+								</a>
+								<p>
+									<em>Pirate Academy </em>
+								</p>
+							</li>
+							<li class="image_projet">
+								<a href="KeepTheBeat.html" >
+									<img src="images/KeepTheBeatLogo.png" class="imagesprojets" alt ="Image KeepTheBeat" />
+								</a>
+								<p>
+									<em>Keep The Beat </em>
+								</p>
+							</li>
+						<li class="image_projet">
+							<a href="Volarela.html">
+								<img src="images/NodeEditor_Petit.png" class="imagesprojets"  />
+							</a>
+							<p>
+								<em>Editor Tool</em>
+							</p>
+						</li>			
+						<li class="image_projet" >
+						<a href="LaSixiemeCollection.html" >
+							<img src="images/Sixieme_Collection_FullView_Petit.png" class="imagesprojets" alt ="Image de la sixieme" />
+						</a>
+						<p>
+							<em>La Sixieme Collection </em>
+						</p>
+					</li>
+							<li class="image_projet">
+								<a href="Inoh'sTale.html" >
+									<img src="images/Inoh_Menu_Petit.png" class="imagesprojets" />
+								</a>
+								<p>
+									<em>Inoh's Tale </em>
+								</p>
+							</li>
+					<li class="image_projet">
+								<a href="PecheALaLigne.html" >
+									<img src="images/Peche_Priest.png" class="imagesprojets" alt ="Image de PecheALaLigne" />
+								</a>
+								<p>
+									<em>Peche A La Ligne </em>
+								</p>
+						</li>	
+						
+						</ul>
+				</nav>
+			</div>
+		</div>
+	</body>
+</html>

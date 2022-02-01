@@ -65,7 +65,7 @@
 				L’intégration de l’api <strong>Steam</strong> est en cours et le jeu sera <strong>bientôt disponible</strong>.
 			</p>
 			
-			<h2></br></br></br></br>
+			<h2></br></br>
 				Mon rôle :
 			</h2>
 			
@@ -79,19 +79,19 @@
 				           <strong>  -	VR contrôler :</strong>
 			</h3>
 			<p>
-				<figure>
-					<!-- <img src="images/EscapeTimeTool.png" class="imagepouraccueil" alt="la_sixème_collection" />*!-->
-				</figure>
+
 				Nous avons utilisé le SDK <strong>OpenXR</strong> afin de réaliser ce projet, ce dernier permet de réunir les sdk de la <strong>plupart des casques VR</strong> (Quest, HTC, Index) en un seul. 
 				</br></br>
 				Le jeu étant un jeu de manipulation, nous avons utilisé le<strong>  XR Interaction Toolkit</strong>  de Unity que nous avons modifié pour convenir à notre jeu : j’ai rajouté une « tomato presence » 
 				qui permet de déplacer l’objet attrapé afin qu’il apparaisse comme<strong>  étant attrapé</strong>  dans la main et non pas remplaçant la main comme le propose le toolkit de base. 
 				Cela permet aussi de <strong> conserver la rotation actuelle</strong>  de l’objet afin de faciliter la manipulation.
 				</br></br>
+												<figure><img src="images/Grab.png"width="50%" onmouseover="this.src='images/GrabGif02.gif';"    onmouseout="this.src='images/Grab.png';">	</figure>
 				Nous avons également créé un <strong>system de déplacement</strong> afin de <strong>limiter la motion sickness</strong> que procure souvent une expérience VR.
 				Le joueur se déplace ainsi autour de sa table en effectuant des mouvements semblables à un tir à la corde, et cela, aussi bien verticalement qu’horizontalement. 
 				Les <strong>mouvements réels</strong> du joueur dans son salon sont toujours <strong>pris en compte</strong>, mais il peut, grâce à notre system, se déplacer dans le jeu sans se mouvoir dans la vraie vie.
 				Cela permet même de <strong>jouer assit</strong> si on le désire.
+								<figure><img src="images/MoveAround.png"width="50%" onmouseover="this.src='images/MoveAroundGif01.gif';"    onmouseout="this.src='images/MoveAround.png';">	</figure>
 			</p>	
 			<!-- <img src="images/EscapeTimeLignes.png"  alt=" The tool" />!-->
 			<h3>

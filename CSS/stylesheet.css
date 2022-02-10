@@ -156,7 +156,10 @@ a:visited {
 a:hover {
 	color: steelblue;
 }
-
+em{
+	margin-top : 100px;
+	font-size: 80%;
+}
 /* selected link */
 a:active {
 	color: darkblue;

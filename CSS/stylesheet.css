@@ -38,13 +38,12 @@ body
 	box-shadow: 0px 4px 15px #1c1a19;
 }
 
-#le_contenu_nouveau h1
-{
-	font-family : Arial;
-	font-weight: bold;
-	font-size: 300%;
-	border-bottom: 2px solid #760001;/*ça ne fonctionne pas pour une raison qui m'échappe */
-}
+	#le_contenu_nouveau h1 {
+		font-family: Arial;
+		font-weight: bold;
+		font-size: 300%;
+		border-bottom: 2px solid rgb(96,127,163); /*ça ne fonctionne pas pour une raison qui m'échappe */
+	}
 
 #le_contenu_nouveau h2
 {
@@ -273,10 +272,9 @@ aside a
 	padding-right: 0px;
 	box-shadow: 0px 4px 15px #1c1a19;
 }
-#contact h1
-{
-	border-bottom:3px solid #760001;
-}
+	#contact h1 {
+		border-bottom: 3px solid rgb(96,127,163);
+	}
 #projets_side
 {
 	position:relative;

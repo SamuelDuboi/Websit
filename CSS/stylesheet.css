@@ -58,12 +58,15 @@ h3{
 	height:100%;
 
 }
-
+figure{
+	margin-inline-start: 0;    
+margin-inline-end: 0;
+}
 	
 }
 #langues
 {
-	width:10%;
+	width:15%;
 	height:10%;
 	}
 #le_contenu_nouveau h2
@@ -132,7 +135,7 @@ nav a:hover
 header
 {
 	background-color: rgb(240, 240, 240);/*ça ne fonctionne pas pour une raison qui m'échappe */
-	padding-bottom: 10%;
+	padding-bottom: 8%;
 	margin-bottom: 3%;
 	position: fixed;	
 	width: 100%;
@@ -229,6 +232,20 @@ aside a
 {
 	float: left;
 }
+.imageScalableL
+{
+	float: right;
+	margin-right: 3%;
+	margin-left: 3%;
+	    border-radius: 5px;
+}
+.imageScalableL:hover
+{
+	float: left;
+	width :150%;
+  bottom: 125px;
+
+}
 .dessous_image
 {
 	clear: both
@@ -293,6 +310,17 @@ img {
 
 	border-radius: 5px;
 }
+
+.imageScalable:hover
+{
+  width :150%;
+  bottom: 125px;
+  margin-left: -32px;
+  margin-right: 16px;
+
+  position: relative;
+}
+
 #contact
 {
 
@@ -300,7 +328,7 @@ img {
 
 
 	font-family : Arial, sans-serif;
-	font-size: 100%;
+	font-size: 1.1vw;
 	width : 75%;
 
 	margin : auto ;

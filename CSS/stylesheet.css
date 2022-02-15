@@ -239,11 +239,26 @@ aside a
 	margin-left: 3%;
 	    border-radius: 5px;
 }
-.imageScalableL:hover
+
+/*if its stupid but it works, then its not stupid*/
+
+ #btnControl {
+        display: none;
+      }
+#btnControl:checked + label > img 
 {
-	float: left;
+       float: left;
 	width :150%;
   bottom: 125px;
+      }
+.imageScalableL:hover
+{
+	cursor:pointer;
+
+}
+.imageScalableL
+{
+	cursor:auto;
 
 }
 .dessous_image

@@ -33,18 +33,39 @@ body
 	padding-right: 20px;
 	background-color: rgb(240, 240, 240);
 	position: relative;
-	top: 250px;
+	margin-top: 15%;
 	padding-right: 0px;
 	box-shadow: 0px 4px 15px #1c1a19;
+	 border-radius: 5px;
 }
 
 	#le_contenu_nouveau h1 {
 		font-family: Arial;
 		font-weight: bold;
-		font-size: 300%;
+		font-size:2vw;
 		border-bottom: 2px solid rgb(96,127,163); /*ça ne fonctionne pas pour une raison qui m'échappe */
 	}
+h1{
+	
+	font-size:2vw;
+	
+}
+h2{
+	font-size:2vw;
+}
+h3{
+	width:100%;
+	height:100%;
 
+}
+
+	
+}
+#langues
+{
+	width:10%;
+	height:10%;
+	}
 #le_contenu_nouveau h2
 {
 	font-family : Dayrom,'Trebuchet MS', Arial, serif;
@@ -54,11 +75,18 @@ body
 #Mon_Nom {
 	display: flex;
 	justify-content: space-between;
-	margin-bottom: 3%;
+	margin-bottom: 2%;
 	padding-left: 5%;
 	padding-right: 5%;
 	background-color: rgb(5,17,30);
 	color: rgb(240, 240, 240);
+	height:250%;
+	width:90%
+}
+ul{
+	margin-block-start: 1%;
+    margin-block-end: 1%;
+	padding-inline-start: 1%;
 }
 
 /*alignement du menu de selection et petite modif graphique */
@@ -67,6 +95,8 @@ li
  margin-left:5%;
  float:left; 
  list-style-type:none;
+ height:5%;
+     border-radius: 5px;
  }
 ul li a 
 {
@@ -75,22 +105,24 @@ ul li a
 }
 nav a
 {
-
+    border-radius: 5px;
 	color: #181818;
-	font-size: 150%;
-	padding-bottom: 30px;
+	font-size: 2vw;
+	padding-bottom: 3%;
 	
 	text-align : center;
 	text-decoration:none;
 }
- a
-{
-	
+p{
+	margin-block-start:0px;
+    margin-block-end: 5%;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
 }
 
 nav a:hover
 {
-    color: #760001;
+    color: steelblue;
 }
 #image_projet :hover
 {
@@ -100,14 +132,14 @@ nav a:hover
 header
 {
 	background-color: rgb(240, 240, 240);/*ça ne fonctionne pas pour une raison qui m'échappe */
-	padding-bottom: 150px;
+	padding-bottom: 10%;
 	margin-bottom: 3%;
 	position: fixed;	
 	width: 100%;
 	z-index:2;
-	height: 30px;
-	
-	box-shadow: 0px 4px 15px #1c1a19;
+	height: 4%;
+	    border-radius: 5px;
+	box-shadow: 0px 0.2vw 1vw #1c1a19;
 
 }
 
@@ -121,6 +153,8 @@ a
 #page_centree
 {
 	display: flex;
+	width:100%;
+	height:100%;
 
 }
 
@@ -134,7 +168,7 @@ aside
     border-radius: 5px;
     padding: 10px;
     color: rgb(240, 240, 240);
-    font-size: 1.5em;
+    font-size: 100%;
 	height:50%;
 	width: 400px;
 	margin-left: 5%;
@@ -144,6 +178,7 @@ aside
 /* unvisited link */
 a:link {
 	color: rgb(10, 10, 10);
+	    border-radius: 5px;
 }
 
 /* visited link */
@@ -186,8 +221,9 @@ aside a
 .imagepouraccueil
 {
 	float: right;
-	margin-right: 20px;
-	margin-left: 20px;
+	margin-right: 3%;
+	margin-left: 3%;
+	    border-radius: 5px;
 }
 .imagepouraccueilr
 {
@@ -197,6 +233,8 @@ aside a
 {
 	clear: both
 }
+.imagesprojets{
+border-radius: 5px;}
 /*page de tous les projets*/
 #projets
 {
@@ -204,7 +242,7 @@ aside a
     flex-wrap: wrap;
 	z-index:1;
 
-
+    border-radius: 5px;
 	font-family : Arial, sans-serif;
 	font-size: 100%;
 	width : 60%;
@@ -234,7 +272,7 @@ aside a
 #les_projets {
 	flex-direction: coloumn;
 	z-index: 1;
-	font-size: 100%;
+	font-size: 1.1vw;
 	width: 75%;
 	margin: auto;
 	margin-left: 5%;
@@ -242,13 +280,18 @@ aside a
 	padding-right: 20px;
 	background-color: rgb(240, 240, 240);
 	position: relative;
-	top: 220px;
-	padding-right: 50px;
+	margin-top: 15%;
+	padding-right: 0;
 	box-shadow: 0px 4px 15px rgb(96,127,163);
+	    border-radius: 5px;
 }
 #les_projets a :hover
 {
 	border-bottom : 2px solid blue;
+}
+img {
+
+	border-radius: 5px;
 }
 #contact
 {
@@ -268,9 +311,10 @@ aside a
 	background-color: rgb(240, 240, 240);
 	
 	position: relative;
-	top: 90px;
+	margin-top : 15%;
 	padding-right: 0px;
 	box-shadow: 0px 4px 15px #1c1a19;
+	 border-radius: 5px;
 }
 	#contact h1 {
 		border-bottom: 3px solid rgb(96,127,163);
@@ -278,20 +322,20 @@ aside a
 #projets_side
 {
 	position:relative;
-	top:220px;
+	margin-top : 15%;
     background-color: rgb(240, 240, 240);
     box-shadow: 0px 2px 5px #1c1a19;
     border-radius: 5px;
-    padding: 10px;
-	margin-right: 5%;
+    padding: 1%;
+	margin-right: 1%;
     font-size: 0.9em;
-	height:800px;
-	width: 500px;
+	height :50vw;
+	width: 25vw;
 	margin-left: 5%;
 	overflow: scroll;
 }
 
 article
 {
-	font-size: 1.5em;
+	font-size:1.2vw;
 }

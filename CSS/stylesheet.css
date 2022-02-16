@@ -232,13 +232,7 @@ aside a
 {
 	float: left;
 }
-.imageScalableL
-{
-	float: right;
-	margin-right: 3%;
-	margin-left: 3%;
-	    border-radius: 5px;
-}
+
 
 /*if its stupid but it works, then its not stupid*/
 
@@ -250,13 +244,35 @@ aside a
        float: left;
 	width :150%;
   bottom: 125px;
+}
+ #btnControl2 {
+        display: none;
       }
+#btnControl2:checked + label > img 
+{
+       float: left;
+	width :150%;
+  bottom: 125px;
+}
 .imageScalableL:hover
 {
 	cursor:pointer;
 
 }
 .imageScalableL
+{
+	cursor:auto;
+float: right;
+	margin-right: 3%;
+	margin-left: 3%;
+	    border-radius: 5px;
+}
+.imageScalable:hover
+{
+	cursor:pointer;
+
+}
+.imageScalable
 {
 	cursor:auto;
 
@@ -326,15 +342,6 @@ img {
 	border-radius: 5px;
 }
 
-.imageScalable:hover
-{
-  width :150%;
-  bottom: 125px;
-  margin-left: -32px;
-  margin-right: 16px;
-
-  position: relative;
-}
 
 #contact
 {

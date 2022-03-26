@@ -117,7 +117,24 @@
 				Afin d’augmenter l’interaction entre les joueurs, j’ai aussi mis en place un <strong>système de communication vocal</strong> via micro. Les paquets de sons étant assez lourds, 
 				j’ai <strong>organisé l’envoie de paquet</strong> afin qu’il n’y ait rien d’autre que des informations sonores dans leurs paquets.
 
-			</p>	
+			</p>
+
+			<h3>
+				           <strong>  Tool d'analyse:</strong>
+			</h3>
+			<p>
+				J’ai réalisé un <strong>tool d’analyse</strong> qui permet au Game Designer d’<strong>équilibrer le jeu</strong>. Ils peuvent trouver quel flox tombe le plus souvent et à quelle position. 
+				Cela a permis de <strong>mettre en évidence</strong> des problèmes de forme sur certains flox qui tombaient bien plus que les autres.  </br>
+				<img width= 35% src="images/FoxyTool_1.png"  alt=" The tool" />
+				<img width= 40% src="images/FoxyTool_2.png"   alt=" The tool" />
+			</br>
+				<i style="padding-left:10%">  Informations que les Game Designers obtiennent grace au tool.</i></br>
+				</br>
+				Quand un flox tombe, l’information est comparée aux autres pour ne pas faire de doublons puis est envoyée dans un tableur <strong>.CSV sur un cloud</strong>. Au lancement d’une partie ce .CSV est mis à jour
+				en local puis <strong>converti en .Json et est encrypté</strong>. Ensuite, l’application d’analyse créée sur Python via la librairie Tkinter va <strong>décoder le .Json </strong>et en extraire des informations.</br></br>
+				Le tout est fait de façon <strong>dynamique</strong> sans que le joueur ni le Game Designer n’est besoin de faire autre chose que de lancer le jeu ou l’application.
+
+			</p>			
 			<h2>
 				Compétences acquises :
 			</h2>
@@ -127,7 +144,10 @@
 				sur la <strong>plupart des casques de réalité virtuelle</strong>. </br></br>
 				-	J’ai amélioré mes connaissances sur la <strong>simulation physique 3D</strong> et sur ses <strong>optimisations dans des moteurs de jeu</strong>.</br></br>
 				-	J’ai appris à développer une <strong>infrastructure en Peer to Peer</strong> pour deux joueurs via l’API bas niveau <a style="style:link" href="https://mirror-networking.com/"> Mirror</a>.</br></br>
-				-	J’ai appris à manager et à <strong>optimiser l’envoie de paquet</strong> afin d’anticiper le lag et la perte de données.</br>
+				-	J’ai appris à manager et à <strong>optimiser l’envoie de paquet</strong> afin d’anticiper le lag et la perte de données.</br></br>
+				- 	J'ai appris à créer une application en Python.</br></br>
+				- 	J'ai appris à <strong>stocker, envoyer et recevoir</strong> des données sur un cloud.</br></br>
+				-	J'ai appris à <strong>sécuriser</strong> des fichiers .Json en les encodants.</br>
 				</br>
 			</p>
 				<!--<img src="images/EscapeTimeRoom2.png"  alt=" The tool" />!-->

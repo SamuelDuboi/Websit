@@ -1,0 +1,205 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="CSS/stylesheet.css" />
+	<title> Samuel Dubois </title>
+</head>
+
+<body>
+
+
+	<header>
+
+		<!--bloc au dessus avec mon nom et un chnagment de langues possible -->
+		<div id="Mon_Nom">
+			<h1>
+				Samuel Dubois - Programmer/ Tool Designer
+			</h1>
+
+			<div id="langues">
+				<h3>
+					<a href="XMLToSequencer.html">
+						<img width=45% height=40% src="images/UnionJack.png" />
+					</a>
+
+					<a href="OutilXMLLevelSequencer.html">
+						<img width=50% height=40% src="images/french_flag.png" />
+					</a>
+				</h3>
+			</div>
+
+		</div>
+
+		<!-- menu de naviguation entre accueil, projets, cv et contact -->
+		<nav id="menu">
+			<ul>
+				<li><a href="index.html"> Accueil</a></li>
+				<li><a href="contact.html"> Contact</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<!-- les nouveaux contenue auront une mini page ici, il y en aura 2 a la fois-->
+	<div id="page_centree">
+		<div id="les_projets">
+			<h1>
+				XML To Sequencer Tool
+			</h1>
+
+			<p>
+
+				During my internship at Atelier Daruma, I was asked to create an <strong>Unreal plug-in </strong>to link an <strong>editing software </strong>to a <strong>Level Sequence </strong>of the engine in <strong>two clicks</strong>.
+				</br>
+
+			</p>
+
+			<h2>
+
+				Utilization :
+			</h2>
+
+			<p>
+				The user creates his tracks on a software that can export <strong>XML files</strong>, he needs to name its track according to the convention so they can be <strong>parsed</strong>. Then he exports the editing in XML
+
+				<figure>
+					<img width=70% src="images/Editingsoft.png" alt="la_sixème_collection" />
+				</figure>
+				Now he opens Unreal Engine, select a <strong>Level Sequence</strong>, right click on it and shows to reimport the XML file. If it’s the first time doing an import, the user needs to <strong>register the XML location</strong>
+				so as the folders where are and will be located each type of files. Then the tool looks for every elements and <strong>imports them .Uasset </strong>in the right folders if needed. For example, if a
+				<strong>soundtrack </strong>is created, the tool will look for the <strong>.WAV </strong>register in the XML and will import it in the <strong>folder Sounds</strong>.
+				</br></br>
+				Then, the tool does some <strong>reflection </strong>for every event and functions of <strong>actors </strong>that are referenced in the XML and the scene. It places the keys event trigger and repeaters at the <strong>key frame </strong>referred in the XML.
+				Following are all the element of a sequencer such as <strong>cameras </strong>handling, <strong>sub sequences </strong>handler or <strong>skeletal animations</strong>.
+				</br></br>
+				After few seconds, the Level Sequencer will open and a window will described what the tool imported, modified and the eventual error
+			</p>
+			<figure>
+				<input type="checkbox" id="btnControl2" />
+				<label class="btn2" for="btnControl2">
+					<img width="40% " src="images/LevelSequence.png" id="btnRight" class="imageScalable" />
+			</figure>
+
+			<h2>
+				<strong>  Creation:</strong>
+			</h2>
+			<p>
+				This tool was created to <strong>reduce </strong>to minimum <strong>the work of the producer </strong>on Unreal to obtain a screen looking like his editing. I had to discuss a lot with him about the <strong>UX of the tool</strong>. Furthermore, the tool is used to import sounds,
+				animations, Niagara particles or gameplay events, so I talk to <strong>every member </strong>of the production to <strong>adapt the tool </strong>to their needs and capacities.
+				</br></br>
+				I did a lot of <strong>reverse engineering </strong>on the tool to recreate all the event that can be call when any <strong>.Uasset</strong> are <strong>drag&drop in a Level Sequence</strong>. To do so I analyzed the code of
+				the UMovieScenes module and all its dependencies and linked library. I had to <strong>rework </strong>most of the <strong>helpers and extensions </strong>so the tool can be implemented on <strong>any project </strong>that only have the UMovieScene module.
+				</br></br>
+				I also <strong>workaround </strong>some <strong>problem of the Level Sequencer </strong>like its UI repaint and serialization. To do so I had the opportunity to use the <strong>Unreal	Development Network</strong>
+				and directly asked Unreal developers about <strong>issues </strong>that they <strong>haven’t yet been focusing on</strong>.
+				</br></br>
+				Finally, with the <strong>C++ </strong>I also used <strong>Python </strong>for its XML parser: <strong>Beautiful Soup </strong>that didn’t had restriction like the XML parser proposed by Unreal.
+			</p>
+			<h2>
+				<strong>  Timeline:</strong>
+			</h2>
+			<p>
+				In order to debug and visualize easily, I create a <strong>sequence player </strong>in runtime that I called the <strong>Timeline</strong>. It works like a video player like you can find on VLC or Youtube,
+				we can move <strong>forward or backward in time </strong>with a slider, <strong>pause </strong>the timeline and chose which chapter we want to go to. Because the Sequence tool can create a lot of actors’ events,
+				I adapted the Timeline so <strong>every gameplay, sound or cinematographic events </strong>appear in the state they should have been if the experience was played without the Timeline 
+				(which was easy for triggers but way harder for repeaters and Niagara emitters).
+			</p>
+			<figure>
+				<input type="checkbox" id="btnControl" />
+				<label class="btn" for="btnControl">
+					<img width="40% " src="images/Timeline.png" id="btnRight" class="imageScalable" />
+			</figure>
+			<h2>
+				Sills acquired:
+			</h2>
+
+			<p>
+				-	I improved my skills on Unreal <strong>C++ </strong>and on <strong>Python</strong>.
+				-	I learned to use <strong>reflection </strong>to create the most <strong>adaptative tool </strong>possible.
+				-	I learned to create <strong>modules, plug-ins and libraries </strong>on Unreal.
+				-	I improved my knowledge on needs of every production job of video games.
+				-	I improved my <strong>UX skills </strong>to create an <strong>ergonomic tool</strong>.
+
+
+				</br>
+			</p>
+
+		</div>
+
+		<div id="projets_side">
+			<nav>
+				<h1>
+					Mes projets
+				</h1>
+				<ul>
+					<li class="image_projet">
+						<a href="FoxyFloxEnglish.html">
+							<img width=100% src="images/FoxyFloxMain.png" class="imagesprojets" alt="Un jeu de VR multijoueur" />
+							<p>
+								<em>Foxy Flox </em>
+							</p>
+						</a>
+
+					</li>
+					<li class="image_projet">
+						<a href="EscapeTimeEnglish.html">
+							<img width=100% src="images/EscapeTimeRoom.png" class="imagesprojets" alt="Image EscapeTime" />
+							<p>
+								<em>Escape Time </em>
+							</p>
+						</a>
+					</li>
+					<li class="image_projet">
+						<a href="PirateAcademyEnglish.html">
+							<img width=100% src="images/PirateAcademy.png" class="imagesprojets" alt="Image PirateAcademy" />
+							<p>
+								<em>Pirate Academy </em>
+							</p>
+						</a>
+
+					</li>
+					<li class="image_projet">
+						<a href="KeepTheBeatEnglish.html">
+							<img width=100% src="images/KeepTheBeatLogo.png" class="imagesprojets" alt="Image KeepTheBeat" />
+							<p>
+								<em>Keep The Beat </em>
+							</p>
+						</a>
+
+					</li>
+					<li class="image_projet">
+						<a href="VolarelaEnglish.html">
+							<img width=100% src="images/NodeEditor.PNG" class="imagesprojets" />
+							<p>
+								<em>Editor Tool</em>
+							</p>
+						</a>
+
+					</li>
+					<li class="image_projet">
+						<a href="LaSixiemeCollectionEnglish.html">
+							<img width=100% src="images/Sixieme_Collection_FullView_Petit.png" class="imagesprojets" alt="Image de la sixieme" />
+							<p>
+								<em>La Sixieme Collection </em>
+							</p>
+						</a>
+
+					</li>
+					<li class="image_projet">
+						<a href="Inoh'sTaleEnglish.html">
+							<img width=100% src="images/Inoh_Menu_Petit.png" class="imagesprojets" />
+							<p>
+								<em>Inoh's Tale </em>
+							</p>
+						</a>
+
+					</li>
+
+				</ul>
+			</nav>
+		</div>
+	</div>
+</body>
+</html>
+

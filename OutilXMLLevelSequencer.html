@@ -1,0 +1,209 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="CSS/stylesheet.css" />
+	<title> Samuel Dubois </title>
+</head>
+
+<body>
+
+
+	<header>
+
+		<!--bloc au dessus avec mon nom et un chnagment de langues possible -->
+		<div id="Mon_Nom">
+			<h1>
+				Samuel Dubois - Programmer/ Tool Designer
+			</h1>
+
+			<div id="langues">
+				<h3>
+					<a href="XMLToSequencer.html">
+						<img width=45% height=40% src="images/UnionJack.png" />
+					</a>
+
+					<a href="OutilXMLLevelSequencer.html">
+						<img width=50% height=40% src="images/french_flag.png" />
+					</a>
+				</h3>
+			</div>
+
+		</div>
+
+		<!-- menu de naviguation entre accueil, projets, cv et contact -->
+		<nav id="menu">
+			<ul>
+				<li><a href="index.html"> Accueil</a></li>
+				<li><a href="contact.html"> Contact</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<!-- les nouveaux contenue auront une mini page ici, il y en aura 2 a la fois-->
+	<div id="page_centree">
+		<div id="les_projets">
+			<h1>
+				Outil de passerelle entre logiciel de montage et séquencer
+			</h1>
+
+			<p>
+
+
+				Lors de mon stage à Atelier Daruma, on m’a demandé de réaliser un <strong>plug-in Unreal</strong> pour faire la passerelle entre un logiciel de
+				<strong>montage video</strong> et les <strong>Level Sequences</strong> du moteur en <strong>deux clics</strong>.
+				</br>
+
+			</p>
+
+			<h2>
+
+				Utilisation :
+			</h2>
+
+			<p>
+				L’utilisateur réalise son montage sur un logiciel permettant d’exporter des fichiers <strong>XML</strong>, il nomme ses pistes selon des conventions afin que celles-ci soient bien <strong>parsées</strong>. Il export ensuite son montage en fichier XML.
+
+
+				<figure>
+					<img width=70% src="images/Editingsoft.png" alt="la_sixème_collection" />
+				</figure>
+				Il ouvre maintenant Unreal Engine, sélectionne une <strong>Level Sequence</strong>, fait un clique droit dessus et choisit de <strong>réimporter </strong> le fichier XML. S’il n’a jamais fait d’import
+				sur cette séquence, il faut qu’il renseigne l’<strong>emplacement </strong>de l’XML ainsi que les emplacements de dossier où seront <strong>rangés les fichiers </strong>de chaque type. Ensuite, l’outil
+				va parcourir tous les éléments et va les <strong>importer en .Uasset </strong>si besoin est dans les dossiers choisis. Par exemple, si une <strong>piste sonore </strong>a été créée, l’outil va chercher le <strong>.WAV </strong>référencé
+				dans la piste pour l’importer dans le <strong>dossier Sound</strong>.
+				</br></br>
+				L’outil va ensuite faire de la <strong>réflexion </strong>pour tous les events et fonction d’actors présent dans la scène qui sont cités dans le XML, et placer des <strong>key d’events  </strong>triggers ou répéteurs au bon temps. Vient ensuite la gestion de tout élément
+				liée au séquencer comme des <strong>Skeletal animations</strong>, des mouvements de <strong>caméra </strong>ou encore des <strong>sub sequence</strong>.
+				</br></br>
+				Au bout de quelques secondes, l’utilisateur verra son séquencer s’ouvrir et une fenêtre décrivant ce qui a été modifié et importé et les éventuelles erreurs.
+
+			</p>
+			<figure>
+				<input type="checkbox" id="btnControl2" />
+				<label class="btn2" for="btnControl2">
+					<img width="40% " src="images/LevelSequence.png" id="btnRight" class="imageScalable" />
+			</figure>
+
+			<h2>
+				<strong>  Réalisation:</strong>
+			</h2>
+			<p>
+				Cet outil m’a été demandé afin de <strong>réduire</strong> au minimum la <strong>charge de travail</strong> du producteur dans Unreal pour obtenir un rendu écran rapidement. Ce travail a donc demandé beaucoup de discussions avec lui afin
+				que l’<strong>ergonomie </strong>de l’outil lui plaise. L’outil pouvant intégrer des sons, des <strong>animations</strong>, des <strong>Niagara particules </strong>et des <strong>events gameplay</strong>, j’ai également discuté avec chaque personne impliquée dans la
+				réalisation de notre projet afin d’<strong>adapter l’outil à leurs besoins</strong>, leurs possibilités et leurs pipelines respectives.
+				</br></br>
+				Afin de créer cet outil, j’ai dû <strong>récréer </strong>une grande partie des <strong>systèmes </strong>appelés lors du <strong>drag&drop </strong>d’un .Uasset dans un sequencer. Pour cela, j’ai décortiqué le code du module UMovieScenes et tous ceux qui lui sont liés. J’ai également dû <strong>recréer </strong>une partie de leur
+				<strong>helpers et libraries </strong>afin que mon plug-in soit <strong>indépendant </strong>de ces derniers et soit <strong>utilisable sur tous les projets </strong>n’utilisant que le module de base sans ses extensions.
+				</br></br>
+				J’ai aussi dû palier à des <strong>problèmes du séquencer </strong>comme son actualisation visuelle et sa <strong>sauvegarde</strong>, pour cela j’ai eu la chance de pouvoir utiliser l’<strong>Unreal Development Network </strong>et de discuter avec
+				des développeurs d’Unreal pour trouver des solutions à des problèmes qu’ils n’avaient <strong>pas encore résolus</strong>.
+			</p>
+			<h2>
+				<strong>  Timeline:</strong>
+			</h2>
+			<p>
+				Afin de pouvoir debugger et voir plus facilement certains éléments, j’ai réalisé un <strong>player de sequence</strong>: la <strong>timeline</strong>. Ce dernier fonctionne comme un player vidéo classique, on peut se déplacer via un
+				<strong>slider </strong>au temps que l’on veut, mettre en <strong>pause </strong>et se déplacer entre <strong>différents chapitres</strong>. Comme l’outil de séquence permet de créer beaucoup d’event répéter et trigger d’actor, j’ai dû <strong>adapter</strong> la
+				timeline pour que tous les <strong>événements gameplay, sonores et cinématographiques</strong> possible apparaissent à l’état qu’ils devraient apparaitre si l’on avait joué sans la timeline, et cela, à n’importe
+				quel temps (chose aisée pour les events trigger, mais moins pour les répétiteurs ou les events Niagara). Le retour dans le temps et bien entendu possible.
+			</p>
+			<figure>
+				<input type="checkbox" id="btnControl" />
+				<label class="btn" for="btnControl">
+					<img width="40% " src="images/Timeline.png" id="btnRight" class="imageScalable" />
+			</figure>
+			<h2>
+				Compétences acquises :
+			</h2>
+
+			<p>
+				-	J’ai approfondi ma connaissance en <strong>C++ </strong>Unreal et en <strong>Python</strong>.</br>
+				-	J’ai appris à utiliser énormément de <strong>réflexion </strong>pour créer un <strong>outil </strong>le plus <strong>généraliste </strong>possible.</br>
+				-	J’ai appris à utiliser créer des <strong>modules, plug-ins et librairies </strong>sur Unreal.</br>
+				-	J’ai approfondi ma relation avec <strong>tous les pôles </strong>de production d’un projet vidéo ludique.</br>
+				-	J’ai approfondi ma connaissance en UX design pour créer un <strong>outil ergonomique</strong>.</br>
+
+
+				</br>
+			</p>
+
+		</div>
+
+		<div id="projets_side">
+			<nav>
+				<h1>
+					Mes projets
+				</h1>
+				<ul>
+					<li class="image_projet">
+						<a href="FoxyFlox.html">
+							<img width=100% src="images/FoxyFloxMain.png" class="imagesprojets" alt="Un jeu de VR multijoueur" />
+							<p>
+								<em>Foxy Flox </em>
+							</p>
+						</a>
+
+					</li>
+					<li class="image_projet">
+						<a href="EscapeTime.html">
+							<img width=100% src="images/EscapeTimeRoom.png" class="imagesprojets" alt="Image EscapeTime" />
+							<p>
+								<em>Escape Time </em>
+							</p>
+						</a>
+					</li>
+					<li class="image_projet">
+						<a href="PirateAcademy.html">
+							<img width=100% src="images/PirateAcademy.png" class="imagesprojets" alt="Image PirateAcademy" />
+							<p>
+								<em>Pirate Academy </em>
+							</p>
+						</a>
+
+					</li>
+					<li class="image_projet">
+						<a href="KeepTheBeat.html">
+							<img width=100% src="images/KeepTheBeatLogo.png" class="imagesprojets" alt="Image KeepTheBeat" />
+							<p>
+								<em>Keep The Beat </em>
+							</p>
+						</a>
+
+					</li>
+					<li class="image_projet">
+						<a href="Volarela.html">
+							<img width=100% src="images/NodeEditor.PNG" class="imagesprojets" />
+							<p>
+								<em>Editor Tool</em>
+							</p>
+						</a>
+
+					</li>
+					<li class="image_projet">
+						<a href="LaSixiemeCollection.html">
+							<img width=100% src="images/Sixieme_Collection_FullView_Petit.png" class="imagesprojets" alt="Image de la sixieme" />
+							<p>
+								<em>La Sixieme Collection </em>
+							</p>
+						</a>
+
+					</li>
+					<li class="image_projet">
+						<a href="Inoh'sTale.html">
+							<img width=100% src="images/Inoh_Menu_Petit.png" class="imagesprojets" />
+							<p>
+								<em>Inoh's Tale </em>
+							</p>
+						</a>
+
+					</li>
+
+				</ul>
+			</nav>
+		</div>
+	</div>
+</body>
+</html>
+

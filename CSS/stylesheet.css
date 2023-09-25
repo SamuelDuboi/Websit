@@ -54,8 +54,9 @@ h2{
 	font-size:2vw;
 }
 h3{
+	display: block;
 	width:100%;
-	height:100%;
+	height:110%;
 
 }
 figure{
@@ -66,9 +67,9 @@ margin-inline-end: 0;
 }
 #langues
 {
-	width:15%;
+	width:30%;
 	height:10%;
-	}
+}
 #le_contenu_nouveau h2
 {
 	font-family : Dayrom,'Trebuchet MS', Arial, serif;
